@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="styles.css">
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Used to Standardize text output-->
+		<title>	
+		Home-Bokhari-Final-Project
+		</title>
+		<h3> 
+		Home-VPN
+		</h3>
+		<h4>
+		Final Project by Nico Bokhari
+		</h4>
+		<ul>
+			<li> <a href=home.html> Home</a></li>
+			<li> <a href=tunneling.html> Tunneling</a></li>
+			<li> <a href=encryption.html> Encryption</a></li>
+			<li> <a href=worked_cited.html> Works Cited</a></li>
+		</ul>
+	</head>
+	<body>
+		<div id = "center"> <!--Intro-->
+			<h2>
+				What Are VPNs?
+			</h2>
+			<p id = "basic">
+			Wonder why there are so many VPN services nowadays? The companies ExpressVPN, NordVPN, and SurfShark may sound familiar and the term VPN has become a common term now.
+			</p>
+			<p id = "basic">
+			What is a VPN though? <br>
+			Why do people use it? How does it work? <br>
+			</p>
+			<p id = "basic">
+			The cryptographic understanding of VPNs also requires us to look into how information across the Internet is packaged and sent. To understand VPNs, we'll look into how information over a VPN is packaged via a process called <a href=tunneling.html>Tunneling</a>, as well as what cryptographic measure, or <a href=encryption.html>Encryption</a>,  must occur to send the information. <br>
+			</p>
+			<p id = "basic">
+			First and foremost, let's establish the basics. <br>
+			</p>
+			<p id = "basic">
+			A VPN, or <b>Virtual Private Network</b>, is a networking tool that allows secure, anonymous communication across the Internet(Sharma and Kaur 2336). <br>
+			</p>
+			<p id = "basic">
+			You might see VPNs at your workplace or school because it allows remote authorized access and secure communication to private property on a private network; however, the main benefits of VPNs that draw people are the abilities to unblock websites and bypass web filters that your government, entertainment platforms, and your local Internet Service Provider (ISP) may impose onto your Internet Protocol(IP) address. (Bates 68) <br>
+			How can this be? <br>
+			</p>
+			<p id = "basic">
+			VPNs act as a guard that is the go-between your device and the Internet. The network communication that would typically occur between you and the Internet is siphoned through the VPN's server first. Since the Internet connects many users around the world, a standard for network communication was necessary to support large network connectivity. This standard, <b>Open Systems Interconnection </b> (OSI), provides the structure for what information is necessary to connect and maintain a connection over a network. 
+			</p>
+			<img id = "sA0" src = "Assets/VPN_Tunneling_Diagram.png">
+		</div>
+		<div id = "center">
+			<h2>
+				Network Communication Overview
+			</h2>
+		</div>
+		<div class = "grid-container"><!-- Network Communication Overview -->
+			<div> <!--Left-->
+				<p id = "aboveImage">
+				The International Organization of Standardization (IOS) created the OSI to organize layers that handle different data(Protocol Data Unit, or PDU) and responsibilities.
+				</p>
+				<div> <!--Netowrk Communication Image-->
+					<img id = "sA1" src="Assets/OSI_StandardNetworkCommunication.jpg">
+					<p id = "smallCaption">
+						ISO-OSI Network Communication, Fathima 1.
+					</p>
+				</div> <!--End of Network Commnication Image --> 
+			</div> 
+			<div> <!--Right, Network Layers List--> 
+				<br> <br> <br>
+				<br> <br> <br>
+				<ul>
+					<li id = "liMod">In the Application Layer, the PDU is the actual data messages that your device wants to send (Fathima 2).  </li>
+					<li id = "liMod">For the Presentation Layer, the PDU is the translated, compressed, and encrypted data from the Application Layer (Fathima 1).  </li>
+					<li id = "liMod">The Session Layer handles session initiation, maintenance, and termination between your device's application and the other party's application(Orebaugh and Pinkard). </li>
+					<li id = "liMod">The Transport Layer manages virtual connection initiation as well as ensures error correction (Orebaugh and Pinkard). </li>
+					<li id = "liMod">The Network Layer sequences the messages being sent and appends the necessary addresses to ensure it is sent to the right device(Fathima 1). </li>
+					<li id = "liMod">The Data Link organizes all the PDUs from the other layers into Frames (Orebaugh and Pinkard)(Ciciora, et al.). </li>
+					<li id = "liMod">The Physical Layer handles the literal bits of the information transmitted in the connection (Fathima 1).</li>
+				</ul>
+			</div>
+		</div><!-- End of Network Communication Overview -->
+		
+		<div class = "grid-container"> <!--Data Encapsulation -->
+			<div> <!--Left Data Encap Image-->
+				<img id = "sA2" src = "Assets/DataEncapsulation.jpg">
+				<p id = "smallCaption">
+					Data Encapsulation, Fathima 2 <br>
+					UDP is a protocol commonly used in the Transport Layer.  
+				</p>
+			</div>
+			<div> <!--Right-->
+				<p>
+					Each of these layers prepares different pieces of information it wants to send, as well as decomposes information it receives. All this data spread amongst the layers is combined in Data Encapsulation.
+				</p>
+				<p>
+					Understanding these layers and the data managed in each helps in understanding how VPNs secure the data within a connection.
+					<br> <br>
+					For example, VPN's allow for you to surf the web anonymously because the Network Layer adds not your IP address, but the <i>VPN Server's IP Address</i>; this way your IP address, as well as your location, is kept anonymous from the Internet. 
+				</p>
+			
+			</div>
+			
+		</div>
+	</body>
+</html>

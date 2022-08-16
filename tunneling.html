@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="styles.css">
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Used to Standardize text output-->
+		<title>	
+		Tunneling-Bokhari-Final-Project
+		</title>
+		<h3> 
+		Tunneling-VPN
+		</h3>
+		<h4>
+		Final Project by Nico Bokhari
+		</h4>
+		<ul>
+			<li> <a href=home.html> Home</a></li>
+			<li> <a href=tunneling.html> Tunneling</a></li>
+			<li> <a href=encryption.html> Encryption</a></li>
+			<li> <a href=worked_cited.html> Works Cited</a></li>
+		</ul>
+	</head>
+	<body>
+		<div id = "center">
+			<h2>
+				Tunneling Overview
+			</h2>
+		</div>
+		<div> <!--Tunneling Overview -->
+			<p id = "basic">	
+				Since VPNs allocate different data responsibilities to the different OSI layers, there are many ways to combine the data in such a way that secures it from tampering. <br>
+				The process of combining all the data from the layers into a sendable packet is called <b>Tunneling</b>; this is executed through a procedure called a <b>Tunneling Protocol</b>. 
+			</p>
+			<p id = "basic">
+				There are many Tunneling Protocols that have been created since the dawn of the Internet which is why there are so many VPN services today. These Tunneling Protocols not only combine information from the OSI layers, but also additional information to ensure security and integrity of the data being sent. 
+			</p>
+			<p id = "basic">
+				For this reason, Tunneling Protocols can occur at <i>any</i> layer of the OSI. 
+			</p>
+		</div>
+		<div> <!--Tunneling Protocols -->
+			<div class = "grid-container"> <!--PPTP-->
+				<p id = "leftOffset">
+					<b>Point-to-Point Tunneling Protocol (PPTP)</b>
+					<br> <br>
+					As one of the oldest Tunneling Protocols, PPTP was a Data Link Layer Tunneling Protocol used for dial up networks back in the early 2000s. It utilized Microsoft Challenge Handshake Protocol(MS-CHAP) to set up a connection and encrypt messages. It was very easy to connect with PPTP as MS-CHAP utilized a 40 bit Encryption Key based on the user's password. While not used very much anymore, it inspired other, better Protocols to be created(Bates 65) (Anon). 
+					<br>
+				</p>
+				<!--PPTP Packet-->
+				<div>
+				<img id = "sA3" src = "Assets/PPTP_Packet.png">
+					<p id = "captionSA3">
+						PPTP Packet, Bates 67
+					</p>
+				</div>
+			</div> <!--End of PPTP-->
+			<div class = "grid-container"> <!--L2TP-->
+				<p id = "leftOffset">
+					<b>Layer 2 Tunneling Protocol (L2TP)</b>
+					<br> <br>
+					L2TP was a successor of PPTP as another Data Link Layer Tunneling Protocol. L2TP focused on speed and data integrity above anything else(Conrad, et al.). The encapsulation at the Data Link Layer performed two operations: UDP packaging and IP packaging.
+					User Datagram Protocol(UDP) is protocol that packages the data with a binary value called a "Check Sum" to easily verify tampered data(Fox and Khan Academy). 
+					<br> <br>
+						For example: <br>
+							The CheckSum is 2 bytes. The Data is 4 bytes and is broken up into 2 byte blocks. The blocks are XORed together producing the CheckSum. The CheckSum is appended to the packet and is sent to the receiver. The receiver can re-calculate the CheckSum from the data in the packet to verify if they match. 	
+				</p>
+				<!--CheckSum Demo-->
+				<div>
+				<img id = "sA4" src = "Assets/CheckSum_Demo.jpg">
+					<p id = "captionSA3">
+						CheckSum Operation, Nico Bokhari
+					</p>
+				</div>
+			</div><!--End of L2TP-->
+			
+			<div class = "grid-container"> <!--IPSec-->
+				<div><!--Left-->
+					<p id = "leftOffset">
+					<b>Internet Protocol Security (IPSec) </b>
+					<br> <br>
+					IPSec occurs at the Network Layer, also known as the IP Layer. IPSec can be flexible in providing high quality data integrity and encryption because it apply an Authentication Header (AH) and Encapsulating Security Payload (ESP) Protocol (IBM). 
+					</p>
+					<p id = "offset1">
+						AH provides authentication by utilizing Hashing Algorithms to create digital signatures (IBM). 
+						<br>
+						Some of these Algorithms include:
+						<br> <br>
+						HMAC_MD5<br>
+						HMAC_SHA1<br>
+						HMAC_SHA2_256_128<br>
+						HMAC_SHA2_384_192<br>
+						HMAC_SHA2_512_256<br>
+						AES_GMAC_128<br>
+						AES_GMAC_256<br>
+						<br>
+						ESP provides encryption with the Algorithms (IBM): 
+						<br>
+						AES_CBC KeyLength 128
+						AES_CBC KeyLength 256
+						<br><br>
+						HMAC:<i>Hashed Message Authentication Code</i> <br>
+						MD:<i>Merkle-Damgard</i><br>
+						SHA:<i>Secure Hash Algorithm</i><br>
+						AES:<i>Advanced Encryption Standard</i><br>
+						GCM:<i>Galois Message Authentication Code</i><br>
+						CBC:<i>Cipher Block Chaining</i><br>
+					</p>
+				</div>
+				<div><!--Right-->
+					<p id = "offset2">
+						<br><br>
+						IPSec uses many other protocols that impact the IP address header added to the packet. IPSec has different modes that change how much information it adds to the packet. 
+						<br><br>
+						<i>Tunnel Mode (more secure):</i>
+					</p>
+					<p id = "offset3">	
+							Entire packet is encrypted and authenticated. 
+							After encryption, a new IP header is added over the packet.
+					</p>
+					<div> <!--Tunnel Image-->
+						<img id = "sA5" src = "Assets/IPSec_Tunnel_Packet.png">
+						<p id = "captionSA3">
+							PSec Tunnel Mode Packet, Bates 81
+						</p>
+					</div>
+					<br> <br>
+					<p id = "offset2">
+						<i>Transport Mode (faster):</i>
+					</p>
+					<p id = "offset3">	
+						Only Payload (Data) is encrypted and authenticated
+					</p>
+
+					<div> <!--Transport Image-->
+						<img id = "sA5" src = "Assets/IPSec_Transport_Packet.png">
+						<p id = "captionSA3">
+							IPSec Transport Mode Packet, Bates 80
+						</p>
+					</div>
+					<br> <br>
+				</div>
+			</div><!--End of L2TP-->
+			<div class = "grid-container"><!--IPSec + L2TP-->
+				<div> <!--Left-->
+					<p id = "leftOffset">
+						<b>IPSec + L2TP</b>
+						<br> <br>
+						Since L2TP is primarily an authentication Tunneling Protocol, it is ofent paired with IPSec for its security. Not only that, but L2TP wraps an IP package around the packetm which allows seamless application of IPSec Protocols (Harrington). 
+					</p>
+				</div>
+				<div><!--Right-->
+					<div> <!--L2TP + IPSec Image-->
+						<br> <br>
+						<img id = "sA5" src = "Assets/L2TP_IPSec_Packet.png">
+						<p id = "captionSA3">
+							IPSec and L2TP Packet, Bates 66
+						</p>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</body>
+</html>

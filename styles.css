@@ -1,0 +1,174 @@
+html{
+overflow: scroll;
+}
+body {
+  /*background-color: #deefff;*/
+  background-image: url(Assets/Page_Background.webp); 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  background-size: cover;
+  background-attachment: fixed; 
+}
+.grid-container{
+	display: grid; 
+	grid-template-columns: auto auto;
+}
+p{
+	font-family: Helvetica;
+	font-size: 14pt; 
+	width: 500px;
+	color:white; 
+}	
+#basic{
+	text-align: justify; 
+	margin-left: auto;
+	margin-right: auto; 
+}
+#aboveImage{
+	float: top; 
+	text-align: center; 
+}
+img{
+	float: left; 
+}
+#sA0{
+	height: 240px; 
+	width: 520px; 
+	float: none; 
+	padding-left: 0px; 
+}
+#sA1{
+	height: 450px; 
+	width: 675px; 
+}
+#smallCaption{
+	font-size: 12pt;
+	float: left;
+	text-align: center; 	
+	padding-left: 100px; 
+}
+#sA2{
+	height: 340px;
+	width: 500px; 
+	padding-left:100px; 	
+}
+#sA3{
+	height: 175px; 
+	width: 650px;  
+	float: left;  
+	padding-left: 50px; 
+	margin-top: 60px; 
+}
+#captionSA3{
+	font-size: 12pt; 
+	float: left; 
+	padding-left: 100px; 
+	text-align: center; 
+}
+#sA4{
+	height: 250px;  
+	width: 650px; 
+	float: left;  
+	padding-left: 50px; 
+	margin-top: 60px; 	
+}
+#sA5{
+	height: 100px; 
+	width: 500px; 
+	float: left; 
+	padding-left:100px;
+}
+#sA6{
+	height: 400px; 
+	width: 400px; 
+	float: left; 
+	padding-left: 30px; 
+}
+#captionSA6{
+	font-size: 12pt; 
+	float: left; 
+	text-align: center; 
+}
+#sA7{
+	height: 280px; 
+	width: 450px; 
+	padding-left: 35%; 
+}
+#captionPDF{
+	font-size: 12pt; 
+	float: top; 
+	padding-left: 0px; 
+	text-align: center; 
+	
+}
+
+a{
+	color: 	#92d4ab; 
+}
+ul li{
+	color: white; 
+	font-family: Helvetica;
+	font-size: 14pt; 
+	padding: 5px;
+}
+#liMod{
+	font-family: Helvetica; 
+	margin-left: auto;
+	text-align:justify;
+	width: 500px; 
+	padding: 5px;  
+	color: white; 
+	font-size: 14pt;
+}
+h3{
+	font-family: Helvetica; 
+	color: white; 
+	
+}
+h4{
+	font-family: Helvetica; 
+	color: white;
+	
+}
+div{
+	padding: 5px; 
+	margin: 5px; 
+}
+#leftOffset{
+	float: left;
+	padding-left: 200px; 
+}
+#left{
+	float: left; 
+}
+#bottom{
+	float: bottom; 
+}
+#center{
+	text-align: center; 
+	color:white; 
+	font-family: Helvetica; 
+}
+#centerPage{
+	align: center; 
+	color:white; 
+	font-family: Helvetica; 
+	margin-left: 500px; 
+}
+#offset1{
+	padding: 0px; 
+	margin-left: 200px;
+}
+#offset2{
+	 float:left; 
+	 margin-left: 100px; 
+}
+#offset3{
+	float: left; 
+	margin-left: 140px; 
+	margin-top: 0px; 
+}
+#tab{
+	margin-left: 38%; 
+}
+

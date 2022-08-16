@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="styles.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<title>	
+		TLS Protocols-Bokhari-Final-Project
+		</title>
+		<h3> 
+		TLS Protocols-VPN
+		</h3>
+		<h4>
+		Final Project by Nico Bokhari
+		</h4>
+		<ul>
+			<li> <a href=home.html> Home</a></li>
+			<li> <a href=tunneling.html> Tunneling</a></li>
+			<li> <a href=encryption.html> Encryption</a></li>
+			<li> <a href=worked_cited.html> Works Cited</a></li>
+		</ul>
+	</head>
+	<body>
+		<div id = "center">
+			<h3>
+			<i>Collection of Management Protocol Procedure</i>
+			<br>
+			(Trappe and Washington 312) 
+			</h3>
+		</div>
+		<div id = "centerPage">
+			<ul>
+				<li  > Alice sends a message to the Server that specifies: 
+					<ul>
+						<li  >Highest Version of SSL Alice's device can support</li>
+						<li  >a Random Number consisting of a 4 byte timestamp and 28 byte random number </li>
+						<li  >Cipher Suite containing, in decreasing preference, the algorithms Alice wants to use to communicate:
+							<ul>
+								<li  >Public Key Algorithms</li>
+								<li  >Block Cipher Encryption </li>
+								<li  >Hashing</li>
+								<li  >Compression</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li  >Server responds with random 32 byte number and its choice of algorithms</li>
+				<li  >Server sends its X.509 Certificate to provide Alice its public key </li>
+				<li  >Alice generates 48 byte pre-master and encrypts it with Server's public key</li>
+				<li  >Both Alice and Server have the following numbers:
+					<ul>
+						<li  >32 byte random number r<sub>A</sub> from Alice to Server that is unsecure </li>
+						<li  >32 byte random number r<sub>S</sub> from Server to Alice that is unsecure</li>
+						<li  >48 byte pre master secret S<sub>pm</sub> that was secure from the Server's public key</li>
+					</ul>
+				</li>
+				<li  >Both Alice and Server generate the same master secret by concatenating the following 3 outputs: 
+					<ul>
+						<li  >MD5(S<sub>pm</sub> || SHA(A || S<sub>pm</sub> || r<sub>A</sub> || r<sub>S</sub>))</li>
+						<li  >MD5(S<sub>pm</sub> || SHA(BB || S<sub>pm</sub> || r<sub>A</sub> || r<sub>S</sub>))</li>
+						<li  >MD5(S<sub>pm</sub> || SHA(CCC || S<sub>pm</sub> || r<sub>A</sub> || r<sub>S</sub>))</li>
+						<li  >A, BB, and CCC are padding </li>
+						<li  >MD5 produces 128 bit = 16 byte output</li>
+						<li  >master secret = 3 * 16 = 48 bytes</li>
+					</ul>
+				</li>
+				<li  >Both Alice and Server have the master secret or the Key Block
+					<ul>
+						<li  >the Key Block is broken into 6 8-byte keys</li>
+						<li  >3 keys for encrypting messages from Alice to Server</li>
+						<li  >3 keys for encrypting message from Server to Alice</li>
+						<li  >The 3 keys include:
+							<ul>
+								<li  >Block Cipher Key (AES, DES, etc.)</li>
+								<li  >Message Authentication Key (Hashing)</li>
+								<li  >Initial Value for CBC or GMC mode of the block cipher</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div id = "center">
+			<h3>
+			<i>Record Protocol Procedure</i>
+			<br>
+			(Trappe and Washington 313) 
+			</h3>
+		</div>
+		<div id = "centerPage">
+			<ul>
+				<li> Alice sends Server a message: 
+					<ul>
+						<li>Compressing message with agreed compression algorithm</li>
+						<li>Hash the compresses message with Message Authentication Key from Session Establishment to create HMAC</li>
+						<li>Use Block Cipher to encrypt</li>
+						<li>Use CBC or GCM to further encrypt block cipher output</li>
+					</ul>
+				</li>
+				<li>Server receives message 
+					<ul>
+						<li>Decrypts message with block cipher key from Key Block</li>
+						<li>Verifies message by acquiring HMAC and comparing it with the sent HMAC</li>
+						<li>Decompresses message</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+	<meta charset="utf-8">
+<!-- Used to Standardize text output-->
+		<title>	
+		Encryption-Bokhari-Final-Project
+		</title>
+		<h3> 
+		Encryption-VPN
+		</h3>
+		<h4>
+		Final Project by Nico Bokhari
+		</h4>
+		<ul>
+			<li> <a href=home.html> Home</a></li>
+			<li> <a href=tunneling.html> Tunneling</a></li>
+			<li> <a href=encryption.html> Encryption</a></li>
+			<li> <a href=worked_cited.html> Works Cited</a></li>
+		</ul>
+	</head>
+	<body>	
+		<div id = "center">
+			<h2>
+				Encryption Overview
+			</h2>
+		</div>
+		<div> <!--Encryption Overview-->
+			<p id = "basic">
+				Tunneling encompasses Data Encapsulation and Encryption, but the way VPNs encrypt OSI information largely depends on the VPN provider and what people consider secure. 
+				<br> <br>
+				VPNs require 3 types of encryption:
+			</p>
+			<p id = "tab">
+				<i>Symmetric Encryption</i> for protecting the transmitted data <br>
+				<i>Public Key Encryption</i> for symmentric key distrbution <br>
+				<i>Hashing</i> for Data Integrity <br>
+			</p>
+		</div>
+		<div id = "center">
+			<h3>
+				Symmetric Encryption 
+			</h3>
+		</div>
+		<div class = "grid-container"> <!--Symmetric Enc-->
+			<div><!--Left-->
+				<p id = "leftOffset">
+					Symmetric Encryption is an encryption algorithm where encryption and decryption use the same key. The Advanced Encryption Standard (AES) is the most popular amongst reputable VPN services. 
+					<br> <br>
+					Some configurations of AES include:
+				</p>
+				<p id = "offset1">
+					<br><br>
+					-128 bit Key with 10 rounds<br>
+					-192 bit Key with 12 rounds<br>
+					-256 bit Key with 14 rounds<br>
+				</p>
+			</div>
+			<div> <!--Right-->
+				<p id = "offset2">
+					<br> <br>
+					<br> <br>
+					VPNs that use AES include: <br>
+					ExpressVPN, NordVPN, Surfshark, CyberGhost, IPVanish, PrivateVPN, VyprVPN, ZenMate, PureVPN, StrongVPN, VPNArea, SaferVPN, Ivacy, GooseVPN, Windscribe, and HideMyAss (Anon). 
+				</p>
+			</div>
+		</div>
+		<div id = "center">
+			<h3>
+				Public Key Encryption 
+			</h3>
+		</div>
+		<div>
+			<p id = "basic">
+				Public Key Encryption is used to ensure both the sender and receiver have the same key required for Symmetric Encrypted communication between your device and a VPN server. <br> <br>
+				In order to connect to a VPN server, two phases must occur:
+			</p>
+			<p id = "tab">
+				-Session Establishment <br>
+				-Transfer of AES keys
+			</p>
+			<p id = "basic">
+				Session Establishment authenticates both the sender and receiver, as well as share information that assists in transferring AES keys. The routines that encompass Session Establishment are handled by a system called<b> Transport Layer Security</b> (Anon). 
+			</p>
+		</div>
+		<div class = "grid-container"> <!--Public Key Enc-->
+			<div> <!--Left Top-->
+				<p id = "leftOffset">
+					<i> Transport Layer Security (Trappe and Washington)</i> <br> <br>
+					Transport Layer Security (TLS) is the successor to Secure Socket Layer(SSL) which is why they are commonly interchanged when discussed in detail. 
+				</p>
+				<p id = "leftOffset">
+					TLS can be broken into a <b>Record Protocol</b>, and <b>Collection of Management Protocol</b>. The Collection of Management Protocol sets up and manages the information required for the Record Protocol to occur. A full breakdown of these Protocols is<a href=tls_protocols.html> here</a>. 
+					<br> <br>
+					A major part of TLS is ensuring the authenticity of the sender and receiver's public keys. A user can have many public keys that are used for communication across the Internet so an established authoritative body to organize and manage users public keys  became necessary: these bodies are called <b>Certification Authorities</b> (CA). 
+					<br> <br>
+					CAs maintain an infrastructure that associates public keys with a user in an entity called a <b>Digital Certificate</b>. The most commonly use certificate is called X.509 Certificate. Both sender and receiver acquire each other's certificates to access each other's public keys instead of asking each other. 
+					These certificates include not only the public key, but also a digital signature and signature algorithm that can be used to verify the public key. 
+				</p>
+			</div>
+			<div><!--Right Top-->
+				<div>
+					<embed src="Assets/Certificates.pdf" width="600" height="375" type="application/pdf">
+				</div>
+				<p id = "captionPDF">
+					A Certificate Authority's Certificate (Trappe and Washington 304)
+				</p>
+				<div>	
+					<embed src="Assets/Certificates_2.pdf" width="600" height="375" type="application/pdf">
+				</div>
+				<p id = "captionPDF">
+					A Server or User's Certificate (Trappe and Washington 304)
+				</p>
+			</div>
+			<div> <!--Left Bottom-->
+				<p id = "leftOffset">
+					<i>RSA</i> <br> <br>
+					Before TLS, RSA was primarily used as it predates most of the Internet. RSA requires large key lengths, though, as the most used lengths are 1024 bit, 2048 bit, and 4096 bit. These large keys are necessary for the factoring number problem to secure RSA: 
+					<br> <br>
+					In 2016, ExpressVPN upgraded to 4096 key RSA after the China Government was able to crack and prevent ExpressVPN messages from entering China with a 1024 bit RSA key (Anon). 
+				</p>
+			</div>
+			<div><!--Right Bottom-->
+				<p id = "offset2">
+					<i>Diffie-Hellman Key Exchange (DF)</i> <br> <br>
+					DH may be used by VPNs for session establishment as it relies on the Discrete Log Problem for secure public keys. DH requires both the sender and receiver to make a random contribution to the key establishment. Since the connection is occurring between a user and a server, the server's random contribution can be set, or made static, and put on their Digital Certificate, or can be newly generated for every sign-on, or made Ephemeral (Anon). 
+				</p>
+			</div>
+		</div>
+		<div id = "center">
+			<h3>
+				Hashing
+			</h3>
+		</div>
+		<div> <!--Hashing-->
+			<p id = "basic">
+				<i>SHA(Anon)</i> <br> <br>
+				For Hashing Algorithms, the most common is the SHA-2 family, consisting of SHA-256, SHA-384, and SHA-512. 
+				<br> <br>
+				VPN Services that use SHA-256: CyberGhost, PrivateVPN, VyprVPN, ZenMate, PureVPN, VPNArea, SaferVPN, and HideMyAss.
+				<br> <br>
+				VPN Services that use SHA-384: NordVPN
+				<br> <br>
+				VPN Services that use SHA-512: ExpressVPN, IPVanish, Surfshark, StrongVPN, and Windscribe. 
+			</p>
+		</div>
+		<div id = "center">
+			<h3>
+				Other Notes on Security (Anon)
+			</h3>
+			<p id = "basic">
+				<i>Varying Key Lengths </i> <br> <br>
+				Some VPN services use the shorter key length versions of their encryption algorithms for different platforms to improve performance. <br>For instance, NordVPN's desktop application uses AES-256 while NordVPN's browser extension uses AES-128. 
+			</p>
+		</div>
+		<div class = "grid-container"> <!--CBC and GCM-->
+			<div> <!--Left-->
+				<p id = "leftOffset">
+					While AES may be the Symmetric Encryption of choice, some VPNs use more encryption algorithms on top of the AES output for more security. These extra measures include <b>Cipher Block Chaining</b> (CBC) and <b>Galois/Counter Mode</b> (GCM). 
+				</p>
+				<p id = "leftOffset">
+					<i> Cipher Block Chaining (CBC) </i> <br> <br>
+					CBC encryption lies in breaking up the text into blocks and encrypting the XOR of the current block's text and the last block's cipher text. This slows down the VPN encryption process as the encryptions of each block cannot be done in parallel. 
+				</p>
+				<p id = "leftOffset">
+					<i> Galois/Counter Mode(GCM).</i> <br> <br>
+					GCM is very similar to CBC in that encryption of a block lies in XORing. The main difference is that a random number is generated, encrypted, XORed with the current text, then incremented for the next block of text. Since the encryption of each block depends on the counter, parallel encryption of blocks can occur which prevents VPN encryption slow-down. 
+				</p>
+				
+			</div>
+			<div> <!--Right-->
+				<div>
+					<embed src="Assets/CBC_Encryption.pdf" width="500" height="250" type="application/pdf">
+				</div>
+				<p id = "captionPDF">
+					Encryption Scheme for CBC. <br>
+					C<sub>0</sub> is initalized by the sender. 
+					(Trappe and Washington 304)
+				</p>
+				<div>
+					<img id = "sA6" src = "Assets/GCM_Encryption.png">
+				</div>
+				<p id = "captionPDF">
+					Encryption Scheme for GCM. <br>
+					The Counter is initialized to a random number and increments for every block encrypted. ("Galois/Counter Mode")
+				</p>
+			</div>
+		</div>
+		<div id = "center">
+			<h3>
+				Examples of VPN Encryption Modes from VPN Providers
+			</h3>
+			<img id = "sA7" src = "Assets/VPN_Encryption_Modes.png">
+		</div>
+	</body>
+</html>
